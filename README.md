@@ -1,64 +1,61 @@
-House Price Prediction using Linear Regression
-This project tackles the classic House Prices - Advanced Regression Techniques problem on Kaggle using various machine learning models, starting with Linear Regression and advancing to Ridge, Lasso, Random Forest, and XGBoost.
 
-Dataset
-Source: Kaggle Competition
+# House Price Prediction – Advanced Regression Project
 
-Files:
+This repository contains a full end-to-end machine learning project using **Linear Regression** and advanced models to predict house prices, based on the [Kaggle House Prices - Advanced Regression Techniques](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques) dataset.
 
-train.csv: 1460 rows, 81 features (both numeric and categorical)
+## Project Overview
 
-test.csv: for final prediction submission
+This project demonstrates a typical regression workflow applied to a real-world dataset. It focuses on:
 
-Project Objectives
-Predict house prices based on provided attributes
+- Thorough data preprocessing
+- Feature selection
+- Model training and evaluation
+- Hyperparameter tuning
+- Model comparison and improvement
+- Test set prediction for submission
 
-Apply robust preprocessing (missing value imputation, encoding, scaling)
+It is designed as a practical showcase of data science and machine learning skills, suitable for third-year students or junior data analysts seeking internship opportunities or building a portfolio.
 
-Evaluate model performance using RMSE, R², and cross-validation
+## Objectives
 
-Experiment with model improvement techniques to target a Top 10–20% Kaggle public score
+- Predict house sale prices based on 80+ features.
+- Explore and clean missing values properly.
+- Build baseline and advanced regression models.
+- Compare model performance using validation metrics.
+- Submit predictions on Kaggle to evaluate leaderboard ranking.
 
-Workflow Summary
-Load Data: Use pandas to explore and clean.
+## Workflow Summary
 
-EDA: Summary stats, correlation check, missing value treatment.
+1. **Load and explore the dataset**  
+2. **Feature selection**  
+3. **Preprocessing pipeline**  
+4. **Model training**  
+5. **Evaluation**  
+6. **Prediction and submission**
 
-Feature Selection: Top correlated numerical + key categorical.
+## Results Summary
 
-Preprocessing Pipelines: Numeric scaling, categorical one-hot encoding.
+| Model             | CV RMSE (approx) | Notes                               |
+|------------------|------------------|-------------------------------------|
+| Linear Regression | ~36,000          | Baseline model                      |
+| Ridge             | Lower RMSE       | Better generalization               |
+| Lasso             | Good trade-off   | Performs feature selection          |
+| Random Forest     | Further improved | Captures non-linear relationships   |
+| XGBoost           | Best score       | Tuned for performance, leaderboard-ready |
 
-Model Training: Linear Regression as baseline.
+## Key Skills Demonstrated
 
-Evaluation: Validation split + cross-validation.
+- Feature engineering and selection
+- Data imputation and preprocessing
+- Sklearn pipelines and modular ML design
+- Model tuning using `GridSearchCV`
+- Tree-based methods and boosting with XGBoost
+- Cross-validation and metric interpretation
+- Real-world test prediction and submission
 
-Advanced Models: Ridge, Lasso, RandomForest, XGBoost with GridSearchCV.
+## Repository Structure
 
-Submission: Generate predictions on test set.
-
-Key Results
-Model	CV RMSE (approx)	Notes
-Linear Regression	~36,000	Baseline
-Ridge	Improved	Handles multicollinearity
-Lasso	Improved	Feature selection via regularization
-Random Forest	↑ Performance	Captures non-linearity
-XGBoost	↑↑ Top performer	Tuned for best Kaggle submission
-
-Skills Demonstrated
-Data preprocessing (imputation, encoding, scaling)
-
-Feature selection & correlation analysis
-
-Pipeline architecture with sklearn
-
-Model evaluation & hyperparameter tuning
-
-Use of joblib, matplotlib, xgboost
-
-Ready-to-submit .csv generator for Kaggle
-
-File Structure
-
+```
 house-price-prediction/
 ├── train.csv
 ├── test.csv
@@ -66,10 +63,10 @@ house-price-prediction/
 ├── linreg_model.pkl
 ├── submission.csv
 └── README.md
-Next Steps
-Log-transform target variable for better residual distribution
+```
 
-Add polynomial features / interactions
+## Notes
 
-Try ensembling top models (e.g. Ridge + XGBoost)
-
+- The project is written in Jupyter Notebook format using Python 3 and scikit-learn.
+- XGBoost is used for its high predictive performance.
+- The notebook includes visualizations, prediction examples, and pipeline-based design for clarity and reusability.
